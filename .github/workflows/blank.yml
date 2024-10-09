@@ -12,5 +12,4 @@ jobs:
       - name: Send Commit Data to Webhook
         run: |
           curl -H "Content-Type: application/json" -X POST -d '{
-            "content": "New commit on `'${{ github.repository }}'` by `'${{ github.actor }}'`: [Commit: `'${{ github.sha }}'`](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\\nMessage: `'${{ github.event.head_commit.message }}'`"
-          }' https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h
+            "content": "New commit on `'${{ github.repository }}'` by `'${{ github.actor }}'`: [Commit: `'${{ github.sha }}'`](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\\nMessage: `'${{ github.event.head_commit.message }}'`"}' https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h
