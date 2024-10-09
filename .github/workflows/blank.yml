@@ -13,4 +13,4 @@ jobs:
         uses: distributhor/workflow-webhook@v3
         with:
           webhook_url: https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h  # Dummy webhook URL
-          data: '{ "commit" }'
+          data: '{ "weapon": "hammer", "drink" : "beer" }'
