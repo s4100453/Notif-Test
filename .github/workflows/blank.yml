@@ -3,13 +3,15 @@ name: Notify Discord on Push
 on:
   push:
     branches:
-      - main  # Change this to your default branch if necessary
+      - main  # Change to your default branch if necessary
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Discord Notification
-        run: |
-          curl -H "Content-Type: application/json" -X POST -d '{
-            "content": "New commit}' https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h
+      - name: Invoke Discord Webhook
+        uses: distributhor/workflow-webhook@v3
+        with:
+          webhook_url: https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h  # Dummy webhook URL
+          webhook_secret: my-secret-12345  # Dummy webhook secret
+          data: '{ "commit" }'
