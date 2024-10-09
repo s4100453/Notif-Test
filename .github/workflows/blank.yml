@@ -1,4 +1,4 @@
-name: Notify Discord on Push
+name: Send Message to Webhook
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main  # Change to your default branch if necessary
 
 jobs:
-  notify:
+  sendMessage:
     runs-on: ubuntu-latest
     steps:
-      - name: Invoke Discord Webhook
-        uses: distributhor/workflow-webhook@v3
-        with:
-          webhook_url: https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h  # Dummy webhook URL
-          data: '{ "weapon": "hammer", "drink" : "beer" }'
+      - name: Send Message to Webhook
+        run: |
+          curl -H "Content-Type: application/json" -X POST -d '{
+            "content": "Hello, this is a test message from GitHub Actions!"
+          }' https://discord.com/api/webhooks/1293396344681271360/Gq-lNfFGPOQufT7d19MQL43JllPVqeorYiakMa0HmvRrPkhUJL3cSg0aaIiVC1Lm6A-h  # Replace with your webhook URL
